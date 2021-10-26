@@ -20,9 +20,83 @@ console.log('lesson 2');
 // https://learn.javascript.ru/recursion
 // https://www.youtube.com/watch?v=Kuq6oIN3PH0
 
+// let globalScope = {
+//     outerScope: null,
+//     c: 100,
+//     f: 'Function',
+//     a: 10,
+// }
+//
+// let a = 10;
+// var c = 100;
+// function f() {}
+// console.log(c);
+
+
+
+// let globalScope = {
+//     outerScope: null,
+//     c: 100, // undefined => 100
+//     f: 'Function',
+//     a: 30, // 10 => 30
+// }
+//
+// let a = 10;
+// var c = 100;
+// function f(arg: any) {
+//     let fScope = {
+//         outerScope: globalScope,
+//         arg: 70, // undefined => 70
+//         h: 500, // undefined => 500
+//     }
+//     var h = 500;
+//     console.log(c);
+//     a = 30;
+// }
+// console.log(f(70));
+
+
+
+// let globalScope = {
+//     outerScope: null,
+//     c: 100, // undefined => 100
+//     f: 'Function',
+//     a: 30, // 10 => 30
+//     innerFunc: 'Function',
+// }
+//
+// let a = 10;
+// var c = 100;
+// function f(arg: any) {
+//     let fScope = {
+//         outerScope: globalScope,
+//         arg: 70, // undefined => 70
+//         h: 500, // undefined => 500
+//     }
+//
+//     var h = 500;
+//     console.log(c);
+//     a = 30;
+//     return function (l: any) {
+//         let anonimScope = {
+//             outerScope: fScope,
+//             l: 50, // undefined => 50
+//         }
+//         return a + l + h;
+//     }
+// }
+// let innerFunc = f( 70);
+// console.log(innerFunc ( 50));
+
 
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
+
+function sum(n: number) {
+    return function (n2: number) {
+        return n + n2;
+    }
+}
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
