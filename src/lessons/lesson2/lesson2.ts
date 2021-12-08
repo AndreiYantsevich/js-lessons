@@ -22,81 +22,52 @@ console.log('lesson 2');
 
 // let globalScope = {
 //     outerScope: null,
-//     c: 100,
 //     f: 'Function',
-//     a: 10,
-// }
-//
+//     c: 50,
+//     a: 100,
+// };
 // let a = 10;
-// var c = 100;
-// function f() {}
-// console.log(c);
-
-
-
-// let globalScope = {
-//     outerScope: null,
-//     c: 100, // undefined => 100
-//     f: 'Function',
-//     a: 30, // 10 => 30
-// }
 //
-// let a = 10;
-// var c = 100;
 // function f(arg: any) {
 //     let fScope = {
 //         outerScope: globalScope,
-//         arg: 70, // undefined => 70
-//         h: 500, // undefined => 500
+//         arg: 1050,
+//         innerA: 100,
+//         func: 'Function',
 //     }
-//     var h = 500;
-//     console.log(c);
-//     a = 30;
-// }
-// console.log(f(70));
-
-
-
-// let globalScope = {
-//     outerScope: null,
-//     c: 100, // undefined => 100
-//     f: 'Function',
-//     a: 30, // 10 => 30
-//     innerFunc: 'Function',
-// }
+//     var innerA = 100;
+//     console.log(a);
+//     a = innerA;
+//     console.log(arg);
 //
-// let a = 10;
-// var c = 100;
-// function f(arg: any) {
-//     let fScope = {
-//         outerScope: globalScope,
-//         arg: 70, // undefined => 70
-//         h: 500, // undefined => 500
-//     }
-//
-//     var h = 500;
-//     console.log(c);
-//     a = 30;
-//     return function (l: any) {
-//         let anonimScope = {
+//     function f1() {
+//         let f1Scope = {
 //             outerScope: fScope,
-//             l: 50, // undefined => 50
-//         }
-//         return a + l + h;
+//         };
+//         console.log(a);
+//         console.log(arg);
+//         arg += 1000;
+//         return arg;
 //     }
+//
+//     return f1;
 // }
-// let innerFunc = f( 70);
-// console.log(innerFunc ( 50));
-
+//
+// var c = 50;
+// let func = f(c);
+// func();
+// console.log(a);
 
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
-function sum(n: number) {
-    return function (n2: number) {
-        return n + n2;
+function sum(arg1: number) {
+    return function(arg2: number) {
+        return arg1 + arg2;
     }
 }
+
+console.log(sum(3)(6));
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
@@ -134,4 +105,5 @@ function sum(n: number) {
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
 // just a plug
-export default () => {};
+export default () => {
+};
