@@ -91,6 +91,18 @@ console.log('lesson 2');
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
+function makeCounter () {
+    let result = 1;
+    return function () {
+        return result++;
+    }
+}
+const counter = makeCounter();
+console.log(counter());
+console.log(counter());
+const counter2 = makeCounter();
+console.log(counter2());
+console.log(counter());
 // const counter = makeCounter();
 // counter(); // 1
 // counter(); // 2
@@ -117,6 +129,35 @@ console.log('lesson 2');
 // 6) superSum(3)(2,5)(3,9) //10
 
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
+
+// function superSum(num: number) {
+//     if (num === null || num === undefined || num <= 0) return 0;
+//     if (num === 1) return (n: number) => n;
+//
+//     let _arguments: number[] = [];
+//
+//     function helper(...args: number[]) {
+//         _arguments = [..._arguments, ...args];
+//         if (_arguments.length >= num) {
+//             _arguments.length = num;
+//             return _arguments.reduce((acc, elem) => acc + elem);
+//         } else {
+//             return helper;
+//         }
+//     }
+//     return helper;
+// }
+//
+// //@ts-ignore
+// console.log(superSum(3)(2)(5)(3));
+// //@ts-ignore
+// console.log(superSum(3)(2)(5,3));
+// //@ts-ignore
+// console.log(superSum(3)(2,5,3));
+// //@ts-ignore
+// console.log(superSum(3)(2,5)(3));
+// //@ts-ignore
+// console.log(superSum(3)(2,5)(3,9));
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
