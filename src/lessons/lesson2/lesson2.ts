@@ -58,16 +58,36 @@ console.log('lesson 2');
 // func();
 // console.log(a);
 
+//Recursion
+// sumTo(1) = 1
+// sumTo(2) = 2 + 1 = 3
+// sumTo(3) = 3 + 2 + 1 = 6
+// sumTo(4) = 4 + 3 + 2 + 1 = 10
+// ...
+// sumTo(100) = 100 + 99 + ... + 2 + 1 = 5050
+
+// function sumTo(arg: number) {
+//     let result = 0;
+//     for (let i=0; i<=arg; i++) {
+//         result += i;
+//     }
+//     return result;
+// }
+
+// function sumTo(arg: number): number {
+//     if (arg === 1) return arg;
+//     return arg + sumTo(arg - 1);
+// }
+
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
-function sum(arg1: number) {
-    return function(arg2: number) {
-        return arg1 + arg2;
-    }
-}
-
-console.log(sum(3)(6));
+// function sum(arg1: number) {
+//     return function(arg2: number) {
+//         return arg1 + arg2;
+//     }
+// }
+// console.log(sum(3)(6));
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
