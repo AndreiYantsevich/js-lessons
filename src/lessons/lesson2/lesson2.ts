@@ -91,18 +91,12 @@ console.log('lesson 2');
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
-function makeCounter () {
-    let result = 1;
-    return function () {
-        return result++;
-    }
-}
-const counter = makeCounter();
-console.log(counter());
-console.log(counter());
-const counter2 = makeCounter();
-console.log(counter2());
-console.log(counter());
+// function makeCounter () {
+//     let result = 1;
+//     return function () {
+//         return result++;
+//     }
+// }
 // const counter = makeCounter();
 // counter(); // 1
 // counter(); // 2
@@ -113,6 +107,31 @@ console.log(counter());
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
+
+function makeCounter (num: number) {
+    let result = num;
+    return {
+        increase: function () {
+            return result + 1;
+        },
+        decrease: function () {
+            return result - 1;
+        },
+        reset: function () {
+            result = 0;
+        },
+        set: function (value: number) {
+            result = value;
+        }
+    }
+}
+const counter = makeCounter(2);
+console.log(counter.increase());
+console.log(counter.decrease());
+counter.set(10);
+console.log(counter.increase());
+counter.reset();
+console.log(counter.increase());
 // increase: +1
 // decrease: -1
 // reset: установить счетчик в 0;
