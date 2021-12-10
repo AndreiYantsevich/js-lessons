@@ -108,30 +108,30 @@ console.log('lesson 2');
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
 
-function makeCounter (num: number) {
-    let result = num;
-    return {
-        increase: function () {
-            return result + 1;
-        },
-        decrease: function () {
-            return result - 1;
-        },
-        reset: function () {
-            result = 0;
-        },
-        set: function (value: number) {
-            result = value;
-        }
-    }
-}
-const counter = makeCounter(2);
-console.log(counter.increase());
-console.log(counter.decrease());
-counter.set(10);
-console.log(counter.increase());
-counter.reset();
-console.log(counter.increase());
+// function makeCounter (num: number) {
+//     let result = num;
+//     return {
+//         increase: function () {
+//             return result + 1;
+//         },
+//         decrease: function () {
+//             return result - 1;
+//         },
+//         reset: function () {
+//             result = 0;
+//         },
+//         set: function (value: number) {
+//             result = value;
+//         }
+//     }
+// }
+// const counter = makeCounter(2);
+// console.log(counter.increase());
+// console.log(counter.decrease());
+// counter.set(10);
+// console.log(counter.increase());
+// counter.reset();
+// console.log(counter.increase());
 // increase: +1
 // decrease: -1
 // reset: установить счетчик в 0;
@@ -180,6 +180,18 @@ console.log(counter.increase());
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
+
+function factorial (n: number): number {
+    return (n !== 1) ? n * factorial(n - 1) : 1;
+}
+
+console.log(factorial(5));
+
+function fibonatchi(n: number): number {
+    return n <= 1 ? n : fibonatchi(n - 1) + fibonatchi(n - 2);
+}
+
+console.log(fibonatchi(3))
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
