@@ -15,7 +15,7 @@ import axios from 'axios';
 // https://jsonplaceholder.typicode.com/posts/1
 // https://habr.com/ru/company/oleg-bunin/blog/417461/?_ga=2.54695343.543933152.1602500664-1040035071.1596811661
 
-axios.post('https://jsonplaceholder.typicode.com/posts', {
+/*axios.post('https://jsonplaceholder.typicode.com/posts', {
     title: 'Andrei',
     body: 'Andrei body',
     userId: 1
@@ -30,7 +30,7 @@ axios.put('https://jsonplaceholder.typicode.com/posts/1', {
     userId: 1
 }).then(res => console.log(res.data))
 
-axios.delete('https://jsonplaceholder.typicode.com/posts/1').then(res => console.log(res.data))
+axios.delete('https://jsonplaceholder.typicode.com/posts/1').then(res => console.log(res.data))*/
 
 
 // just a plug
