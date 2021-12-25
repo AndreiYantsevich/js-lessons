@@ -12,7 +12,8 @@ const API = {
         return axiosInstance.get(query);
     },
     searchFilmsByType: (title: string, type: string) => {
-        return axiosInstance.get(`${configOMB.baseURL}/?apikey=${key}&t=${title}&type=${type}`)
+        const query = `${key}&s=${title}&type=${type}`
+        return axiosInstance.get(query)
     }
 };
 
