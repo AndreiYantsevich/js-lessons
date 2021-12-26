@@ -1,4 +1,3 @@
-import {log} from 'util';
 
 console.log('lesson 4');
 
@@ -239,6 +238,23 @@ export const rejectPromise = () => {
 // прибавляет к нему Ваше имя и возвращает новую строку из функции
 // Создайте функцию print, которая выводит в консоль значение своего параметра
 // Добавьте два метода then и передайте созданные функции.
+
+// new Promise((resolve, reject) => {
+//     setTimeout(() => resolve('Promise Data'), 3000);
+// }).then((resolve) => console.log(resolve));
+
+new Promise((resolve, reject) => {
+    setTimeout(() => resolve("My name is"),1000)
+}).then((resolve) => onSuccess(resolve))
+    .then((resolve) => print(resolve))
+
+const onSuccess = (param: any) => {
+    return `${param} Andrei`
+}
+
+const print = (param: any) => {
+    console.log(param)
+}
 
 
 // Task 7
