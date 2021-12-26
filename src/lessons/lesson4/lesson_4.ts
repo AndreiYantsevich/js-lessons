@@ -1,4 +1,3 @@
-
 console.log('lesson 4');
 
 // http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
@@ -134,7 +133,6 @@ console.log('lesson 4');
 // 1 5 7 6 3 4 2
 
 
-
 // Task 01
 // Создайте промис, который постоянно находиться в состоянии pending.
 // В конструкторе промиса выведите в консоль сообщение "Promise is created".
@@ -216,7 +214,7 @@ export const createPromise = () => {
         handlePromise.resolve = resolve;
         handlePromise.reject = reject;
     })
-        handlePromise.promise
+    handlePromise.promise
         .then(handlePromise.onSuccess)
         .catch(handlePromise.onError)
     //@ts-ignore
@@ -240,21 +238,17 @@ export const rejectPromise = () => {
 // Добавьте два метода then и передайте созданные функции.
 
 // new Promise((resolve, reject) => {
-//     setTimeout(() => resolve('Promise Data'), 3000);
-// }).then((resolve) => console.log(resolve));
-
-new Promise((resolve, reject) => {
-    setTimeout(() => resolve("My name is"),1000)
-}).then((resolve) => onSuccess(resolve))
-    .then((resolve) => print(resolve))
-
-const onSuccess = (param: any) => {
-    return `${param} Andrei`
-}
-
-const print = (param: any) => {
-    console.log(param)
-}
+//     setTimeout(() => resolve('My name is '), 1000)
+// }).then((resolve) => onSuccess(resolve))
+//     .then((resolve) => print(resolve))
+//
+// const onSuccess = (param: any) => {
+//     return param + 'Andrei'
+// }
+//
+// const print = (param: any) => {
+//     console.log(param)
+// }
 
 
 // Task 7
@@ -263,7 +257,22 @@ const print = (param: any) => {
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
 
+const pr1 = new Promise((resolve, reject) => {
+    setTimeout(() => resolve({name: 'Anna'}), 2000)
+})
+const pr2 = new Promise((resolve, reject) => {
+    setTimeout(() => resolve({age: 16}), 3000)
+})
+const pr3 = new Promise((resolve, reject) => {
+    setTimeout(() => resolve({city: ''}), 4000)
+})
+Promise.all([pr1, pr2, pr3])
+    .then((res) => {
+        let obj = res.reduce((acc, el) => Object.assign(acc, el), {})
+        console.log(obj)
+    })
 
 
 // just a plug
-export default ()=>{};
+export default () => {
+};
