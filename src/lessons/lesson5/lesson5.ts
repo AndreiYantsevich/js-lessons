@@ -267,19 +267,19 @@ console.log('Lesson 5');
 // Дан объект someObj, реализуйте функцию greeting и присвойте ее ключу объекта с аналогичным именем.
 // Функция должна вернуть строку `My name is ${name}. I am ${age}`, где name и age берутся из свойств объекта
 
-type someObjType = {
-    name: string;
-    age: number;
-    greeting?: Function
-}
-
-let someObj:someObjType = {
-    name: 'Eugene',
-    age: 32
-}
-someObj.greeting = function greeting() {
-    return (`My name is ${this.name}. I am ${this.age}`)
-}
+// type someObjType = {
+//     name: string;
+//     age: number;
+//     greeting?: Function
+// }
+//
+// let someObj:someObjType = {
+//     name: 'Eugene',
+//     age: 32
+// }
+// someObj.greeting = function greeting() {
+//     return (`My name is ${this.name}. I am ${this.age}`)
+// }
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
@@ -392,12 +392,13 @@ someObj.greeting = function greeting() {
 
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
-let One = {name: 'One'};
-let Two = {
-    name: 'Two', sayHello: function () {
-        console.log(`Hello, my name is ${this.name}`)
-    }
-};
+// let One = {name: 'One'};
+// let Two = {
+//     name: 'Two', sayHello: function () {
+//         console.log(`Hello, my name is ${this.name}`)
+//     }
+// };
+// console.log(Two.sayHello.call(One))
 
 // Task 06
 // создайте объект helperObj у которого есть следующие методы:
