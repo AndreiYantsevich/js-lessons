@@ -112,7 +112,6 @@ console.log('Lesson 5');
 // arrow()
 
 
-
 // let obj = { name: 'Evgen' };
 // let obj2 = { name: 'Hanna' };
 //
@@ -147,7 +146,6 @@ console.log('Lesson 5');
 // let obj2 = { name: 'Hanna' };
 //
 // obj.a();
-
 
 
 // let obj = {
@@ -269,20 +267,20 @@ console.log('Lesson 5');
 // Дан объект someObj, реализуйте функцию greeting и присвойте ее ключу объекта с аналогичным именем.
 // Функция должна вернуть строку `My name is ${name}. I am ${age}`, где name и age берутся из свойств объекта
 
-type someObjType = {
-    name: string;
-    age: number;
-    greeting: Function
-}
-
-let someObj:someObjType = {
-    name: 'Eugene',
-    age: 32,
-    greeting() {
-        console.log(`My name is ${this.name}. I am ${this.age}`);
-    }
-}
-someObj.greeting();
+// type someObjType = {
+//     name: string;
+//     age: number;
+//     greeting: Function
+// }
+//
+// let someObj:someObjType = {
+//     name: 'Eugene',
+//     age: 32,
+//     greeting() {
+//         console.log(`My name is ${this.name}. I am ${this.age}`);
+//     }
+// }
+// someObj.greeting();
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
@@ -293,9 +291,83 @@ someObj.greeting();
 // rest current count - устанавливает значение счетчика равным 0
 // все методы должны ссылаться на сам объект
 
+// function Counter (count: number) {
+//     //@ts-ignore
+//     this.count = {
+//         currentValue: count
+//     }
+//     //@ts-ignore
+//     this.getCurrentCount = function () {
+//         return this.count.currentValue;
+//     }
+//     //@ts-ignore
+//     this.increment = function () {
+//         this.count.currentValue = this.count.currentValue + 1;
+//         return this.count.currentValue;
+//     }
+//     //@ts-ignore
+//     this.decrement = function () {
+//         this.count.currentValue = this.count.currentValue - 1;
+//         return this.count.currentValue;
+//     }
+//     //@ts-ignore
+//     this.setCurrentCount = function (value: number) {
+//         this.count.currentValue = value;
+//         return this.count.currentValue;
+//     }
+//     //@ts-ignore
+//     this.resetCurrentCount = function () {
+//         this.count.currentValue = 0;
+//         return this.count.currentValue;
+//     }
+// }
+//@ts-ignore
+// let counter = new Counter(10);
+// counter.setCurrentCount(15);
+// counter.increment();
+// counter.increment();
+// counter.decrement();
+// counter.resetCurrentCount();
+// console.log(counter.getCurrentCount());
+
+
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
 // counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12
+
+// class Counter {
+//     constructor() {
+//         //@ts-ignore
+//         this.currentValue = 0;
+//     }
+//
+//     getCurrentCount() {
+//         //@ts-ignore
+//         return this.currentValue
+//     }
+//
+//     increment() {
+//         //@ts-ignore
+//         this.currentValue = this.currentValue + 1;
+//         return this
+//     }
+//
+//     decrement() {
+//         //@ts-ignore
+//         this.currentValue = this.currentValue - 1;
+//         return this
+//     }
+//
+//     setCurrentCount(currentCount: number) {
+//         //@ts-ignore
+//         this.currentValue = currentCount;
+//         return this
+//     }
+// }
+//
+// let counter = new Counter();
+// //@ts-ignore
+// console.log(counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount())
 
 // Task 04
 // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
@@ -304,7 +376,11 @@ someObj.greeting();
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
 let One = {name: 'One'};
-let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
+let Two = {
+    name: 'Two', sayHello: function () {
+        console.log(`Hello, my name is ${this.name}`)
+    }
+};
 
 // Task 06
 // создайте объект helperObj у которого есть следующие методы:
@@ -316,7 +392,9 @@ let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${t
 // Bind
 // 1) Дана функция sumTwoNumbers, реализовать функцию bindNumber которая принимает функцию sumTwoNumbers и число, и
 // возвращает другую функцию, которое также принимает число и возвращает сумму этих чисел. Замыкание использовать нельзя
-function sumTwoNumbers(a:number,b:number):number {return a + b};
+function sumTwoNumbers(a: number, b: number): number {
+    return a + b
+};
 
 // 2) Напишите функцию которая принимает первым аргументом объект One, а вторым helperObj. Данная функция
 // возвращает другую функцию которая принимает строку в качестве аргумента и устанавливает ее свойству name объекта One
@@ -326,6 +404,6 @@ function sumTwoNumbers(a:number,b:number):number {return a + b};
 // Реализовать задачи 2-4 из Bind с помощью Call
 
 
-
 // just a plug
-export default () => {};
+export default () => {
+};
