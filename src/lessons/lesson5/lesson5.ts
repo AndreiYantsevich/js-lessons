@@ -267,20 +267,19 @@ console.log('Lesson 5');
 // Дан объект someObj, реализуйте функцию greeting и присвойте ее ключу объекта с аналогичным именем.
 // Функция должна вернуть строку `My name is ${name}. I am ${age}`, где name и age берутся из свойств объекта
 
-// type someObjType = {
-//     name: string;
-//     age: number;
-//     greeting: Function
-// }
-//
-// let someObj:someObjType = {
-//     name: 'Eugene',
-//     age: 32,
-//     greeting() {
-//         console.log(`My name is ${this.name}. I am ${this.age}`);
-//     }
-// }
-// someObj.greeting();
+type someObjType = {
+    name: string;
+    age: number;
+    greeting?: Function
+}
+
+let someObj:someObjType = {
+    name: 'Eugene',
+    age: 32
+}
+someObj.greeting = function greeting() {
+    return (`My name is ${this.name}. I am ${this.age}`)
+}
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
@@ -372,6 +371,24 @@ console.log('Lesson 5');
 // Task 04
 // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
 // у которого будут эти свойства и метод greeting из Task 01
+
+// class myFirstConstructorFunc {
+//     constructor(name: string, age: number) {
+//         //@ts-ignore
+//         this.name = name
+//         //@ts-ignore
+//         this.age = age
+//     }
+//
+//     greeting() {
+//         //@ts-ignore
+//         console.log(`My name is ${this.name}. I am ${this.age}`);
+//     }
+// }
+//
+// let obj = new myFirstConstructorFunc('Andrei', 29)
+// let result = someObj.greeting.call(obj, 'Andrei', 29)
+// console.log(result)
 
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
