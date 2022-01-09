@@ -392,12 +392,12 @@ console.log('Lesson 5');
 
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
-// let One = {name: 'One'};
-// let Two = {
-//     name: 'Two', sayHello: function () {
-//         console.log(`Hello, my name is ${this.name}`)
-//     }
-// };
+let One = {name: 'One'};
+let Two = {
+    name: 'Two', sayHello: function () {
+        console.log(`Hello, my name is ${this.name}`)
+    }
+};
 // console.log(Two.sayHello.call(One))
 
 // Task 06
@@ -406,6 +406,21 @@ console.log('Lesson 5');
 // setAge - устанавливает полученное значение в свойство age объекта
 // greeting - используется функция sayHello из Task 05
 // можно использовать @ts-ignore
+
+// const helperObj = {
+//     name: '',
+//     changeName: function (newName: string) {
+//         this.name = newName;
+//     },
+//     setAge: function (age: number) {
+//         //@ts-ignore
+//         this.age = age;
+//     },
+//     greeting: Two.sayHello,
+// }
+// helperObj.changeName('Viktoria')
+// helperObj.setAge(24)
+// console.log(helperObj.greeting())
 
 // Bind
 // 1) Дана функция sumTwoNumbers, реализовать функцию bindNumber которая принимает функцию sumTwoNumbers и число, и
